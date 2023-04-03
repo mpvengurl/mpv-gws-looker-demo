@@ -308,11 +308,21 @@ view: usage {
     group_item_label: "Num Disabled Accounts"
   }
 
+  measure: count_num_disabled_accounts {
+    type: count
+    drill_fields: [accounts__num_disabled_accounts]
+  }
+
   dimension: accounts__num_locked_users {
     type: number
     sql: ${TABLE}.accounts.num_locked_users ;;
     group_label: "Accounts"
     group_item_label: "Num Locked Users"
+  }
+
+  measure: count_num_locked_users {
+    type: count
+    drill_fields: [accounts__num_locked_users]
   }
 
   dimension: accounts__num_roles_assigned {
@@ -341,6 +351,11 @@ view: usage {
     sql: ${TABLE}.accounts.num_suspended_users ;;
     group_label: "Accounts"
     group_item_label: "Num Suspended Users"
+  }
+
+  measure: count_num_suspended_users {
+    type: count
+    drill_fields: [accounts__num_suspended_users]
   }
 
   dimension: accounts__num_users {
