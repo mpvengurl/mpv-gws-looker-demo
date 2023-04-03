@@ -179,11 +179,21 @@ view: usage {
     group_item_label: "Is 2sv Enforced"
   }
 
+  measure: count_2sv_enforced {
+    type: count
+    drill_fields: [user_email]
+  }
+
   dimension: accounts__is_2sv_enrolled {
     type: yesno
     sql: ${TABLE}.accounts.is_2sv_enrolled ;;
     group_label: "Accounts"
     group_item_label: "Is 2sv Enrolled"
+  }
+
+  measure: count_2sv_enrolled {
+    type: count
+    drill_fields: [user_email]
   }
 
   dimension: accounts__is_archived {
