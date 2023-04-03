@@ -181,7 +181,7 @@ view: usage {
 
   measure: count_2sv_enforced {
     type: count
-    drill_fields: [user_email]
+    drill_fields: [accounts__is_2sv_enforced]
   }
 
   dimension: accounts__is_2sv_enrolled {
@@ -193,7 +193,7 @@ view: usage {
 
   measure: count_2sv_enrolled {
     type: count
-    drill_fields: [user_email]
+    drill_fields: [accounts__is_2sv_enrolled]
   }
 
   dimension: accounts__is_archived {
