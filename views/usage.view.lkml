@@ -179,21 +179,11 @@ view: usage {
     group_item_label: "Is 2sv Enforced"
   }
 
-  measure: count_2sv_enforced {
-    type: count
-    drill_fields: [accounts__is_2sv_enforced]
-  }
-
   dimension: accounts__is_2sv_enrolled {
     type: yesno
     sql: ${TABLE}.accounts.is_2sv_enrolled ;;
     group_label: "Accounts"
     group_item_label: "Is 2sv Enrolled"
-  }
-
-  measure: count_2sv_enrolled {
-    type: count
-    drill_fields: [accounts__is_2sv_enrolled]
   }
 
   dimension: accounts__is_archived {
@@ -346,6 +336,10 @@ view: usage {
     group_item_label: "Num Super Admins"
   }
 
+  measure: count__admins {
+    type: sum
+    sql: ${accounts__is_delegated_admin} + ${accounts__is_super_admin} ;;
+  }
   dimension: accounts__num_suspended_users {
     type: number
     sql: ${TABLE}.accounts.num_suspended_users ;;
