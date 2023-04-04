@@ -338,7 +338,7 @@ view: usage {
 
   measure: count__admins {
     type: sum
-    sql: ${accounts__is_delegated_admin} + ${accounts__is_super_admin} ;;
+    sql: ${accounts__num_delegated_admins} + ${accounts__num_super_admins} ;;
   }
   dimension: accounts__num_suspended_users {
     type: number
