@@ -236,7 +236,7 @@ view: usage {
   }
 
   dimension: accounts__last_login_time_date {
-    type: date
+    type: number
     sql: SELECT TIMESTAMP_SECONDS(${TABLE}.accounts.last_login_time) from ${TABLE} ;;
     group_label: "Accounts"
     group_item_label: "Last Login Time Date"
