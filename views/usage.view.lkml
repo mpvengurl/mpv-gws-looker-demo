@@ -235,14 +235,6 @@ view: usage {
     group_item_label: "Last Login Time"
   }
 
-  dimension: accounts__last_login_time_date {
-    type: date
-    sql: SELECT TIMESTAMP_SECONDS(${TABLE}.accounts.last_login_time) from ${TABLE} where ${accounts__last_login_time} != null ;;
-    group_label: "Accounts"
-    group_item_label: "Last Login Time Date"
-    allow_fill: no
-  }
-
   dimension: accounts__last_name {
     type: string
     sql: ${TABLE}.accounts.last_name ;;
