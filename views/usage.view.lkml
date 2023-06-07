@@ -5576,7 +5576,7 @@ view: usage {
   }
   measure: agg_total_storage_used_mb {
     type: sum
-    sql: ${accounts__gplus_photos_used_quota_in_mb} ${accounts__shared_drive_used_quota_in_mb} ${accounts__gmail_used_quota_in_mb}${accounts__drive_used_quota_in_mb};;
+    sql: ${accounts__gplus_photos_used_quota_in_mb} + ${accounts__shared_drive_used_quota_in_mb} + ${accounts__gmail_used_quota_in_mb} + ${accounts__drive_used_quota_in_mb};;
     drill_fields: [detail*]
   }
   # ----- Sets of fields for drilling ------
