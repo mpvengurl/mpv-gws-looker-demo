@@ -5554,6 +5554,16 @@ view: usage {
     sql: ${accounts__drive_used_quota_in_mb} ;;
     drill_fields: [detail*]
   }
+  measure: agg_num_users_less_secure_apps_access_allowed {
+    type: sum
+    sql: ${accounts__num_users_less_secure_apps_access_allowed} ;;
+    drill_fields: [detail*]
+  }
+  measure: agg_num_users_less_secure_apps_access_denied {
+    type: sum
+    sql: ${accounts__num_users_less_secure_apps_access_denied} ;;
+    drill_fields: [detail*]
+  }
   # ----- Sets of fields for drilling ------
   set: detail {
     fields: [
