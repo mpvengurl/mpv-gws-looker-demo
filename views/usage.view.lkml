@@ -5489,9 +5489,69 @@ view: usage {
     type: count
     drill_fields: [detail*]
   }
-  measure: custom_sum_of_accounts_num_suspended_users {
+  measure: agg_accounts_num_suspended_users {
     type: sum
     sql: ${accounts__num_suspended_users} ;;
+    drill_fields: [detail*]
+  }
+  measure: agg_accounts_num_users {
+    type: sum
+    sql: ${accounts__num_users} ;;
+    drill_fields: [detail*]
+  }
+  measure: agg_accounts_num_locked_users {
+    type: sum
+    sql: ${accounts__num_locked_users}_users} ;;
+    drill_fields: [detail*]
+  }
+  measure: agg_accounts_num_disabled_accounts {
+    type: sum
+    sql: ${accounts__num_disabled_accounts} ;;
+    drill_fields: [detail*]
+  }
+  measure: agg_accounts_num_users_2sv_enforced {
+    type: sum
+    sql: ${accounts__num_users_2sv_enforced} ;;
+    drill_fields: [detail*]
+  }
+  measure: agg_accounts_users_2sv_enrolled {
+    type: sum
+    sql: ${accounts__num_users_2sv_enrolled} ;;
+    drill_fields: [detail*]
+  }
+  measure: agg_users_2sv_enrolled_and_enforced {
+    type: sum
+    sql: ${accounts__num_users_2sv_enrolled_and_enforced} ;;
+    drill_fields: [detail*]
+  }
+  measure: agg_users_password_length_non_compliant {
+    type: sum
+    sql: ${accounts__num_users_password_length_non_compliant} ;;
+    drill_fields: [detail*]
+  }
+  measure: agg_users_password_length_compliant {
+    type: sum
+    sql: ${accounts__num_users_password_length_compliant} ;;
+    drill_fields: [detail*]
+  }
+  measure: agg_total_quota_in_mb {
+    type: sum
+    sql: ${accounts__total_quota_in_mb} ;;
+    drill_fields: [detail*]
+  }
+  measure: agg_used_quota_in_mb {
+    type: sum
+    sql: ${accounts__used_quota_in_mb} ;;
+    drill_fields: [detail*]
+  }
+  measure: agg_gmail_used_quota_in_mb {
+    type: sum
+    sql: ${accounts__gmail_used_quota_in_mb} ;;
+    drill_fields: [detail*]
+  }
+  measure: agg_drive_used_quota_in_mb {
+    type: sum
+    sql: ${accounts__drive_used_quota_in_mb} ;;
     drill_fields: [detail*]
   }
   # ----- Sets of fields for drilling ------
