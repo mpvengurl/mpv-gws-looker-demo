@@ -5489,7 +5489,11 @@ view: usage {
     type: count
     drill_fields: [detail*]
   }
-
+  measure: custom_sum_of_accounts_num_suspended_users {
+    type: sum
+    sql: ${accounts__num_suspended_users} ;;
+    drill_fields: [detail*]
+  }
   # ----- Sets of fields for drilling ------
   set: detail {
     fields: [
@@ -5539,3 +5543,4 @@ view: usage__cros__device_version_distribution {
     sql: ${TABLE}.MajorOsVersionCount ;;
   }
 }
+
