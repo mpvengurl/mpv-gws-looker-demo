@@ -5579,6 +5579,52 @@ view: usage {
     sql: ${accounts__gplus_photos_used_quota_in_mb} + ${accounts__shared_drive_used_quota_in_mb} + ${accounts__gmail_used_quota_in_mb} + ${accounts__drive_used_quota_in_mb};;
     drill_fields: [detail*]
   }
+  measure: agg_emails_received {
+    type: sum
+    sql: ${gmail__num_emails_received};;
+    drill_fields: [detail*]
+  }
+  measure: agg_emails_sent {
+    type: sum
+    sql: ${gmail__num_emails_sent};;
+    drill_fields: [detail*]
+  }
+  measure: agg_inbound_delivered_emails {
+    type: sum
+    sql: ${gmail__num_inbound_delivered_emails};;
+    drill_fields: [detail*]
+  }
+  measure: agg_inbound_rerouted_emails {
+    type: sum
+    sql: ${gmail__num_inbound_rerouted_emails};;
+    drill_fields: [detail*]
+  }
+  measure: agg_num_inbound_rejected_emails {
+    type: sum
+    sql: ${gmail__num_inbound_rejected_emails};;
+    drill_fields: [detail*]
+  }
+  measure: agg_num_inbound_spam_emails {
+    type: sum
+    sql: ${gmail__num_inbound_spam_emails};;
+    drill_fields: [detail*]
+  }
+  measure: agg_num_inbound_not_spam_emails {
+    type: sum
+    sql: ${gmail__num_inbound_non_spam_emails};;
+    drill_fields: [detail*]
+  }
+  measure: agg_num_inbound_encrypted_emails {
+    type: sum
+    sql: ${gmail__num_inbound_encrypted_emails};;
+    drill_fields: [detail*]
+  }
+  measure: agg_num_inbound_unencrypted_emails {
+    type: sum
+    sql: ${gmail__num_inbound_unencrypted_emails};;
+    drill_fields: [detail*]
+  }
+
   # ----- Sets of fields for drilling ------
   set: detail {
     fields: [
@@ -5628,4 +5674,3 @@ view: usage__cros__device_version_distribution {
     sql: ${TABLE}.MajorOsVersionCount ;;
   }
 }
-
